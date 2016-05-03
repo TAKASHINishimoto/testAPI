@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
@@ -61,7 +62,7 @@
     <div class="large-12 columns">
       <h3 class="text-center">Operand</h3>
       <hr>
-      <form class="custom" action="http://localhost/testAPI/index.php" method="get">
+      <form class="custom" action="index.php?ope1=$ope1&ope2=$ope2" method="GET">
         <fieldset>
           <legend>Please input operands at this forms.</legend>
           <div class="row">
@@ -71,14 +72,37 @@
             </div>
             <div class="large-6 columns">
               <label>Operand 2</label>
-              <input type="text" name="ope1" placeholder="ex) 6">
+              <input type="text" name="ope2" placeholder="ex) 6">
             </div>
           </div>
-          <button type="button" class="button inverse">Done</button>
+          <button type="submit" class="button inverse">Done</button>
         </fieldset>
       </form>
     </div>
   </div>
   <!-- フォーム入力終了 -->
+  <!-- 結果表示開始 -->
+<?php
+$op1 = $_GET['ope1'];
+$op2 = $_GET['ope2'];
+?>
+  <div class="row" id="doc-pricing-tables">
+      <hr>
+        <h3 class="text-center">Result CalcAPI</h3>
+            <div class="large-12 columns">
+              <div class="row">
+                <div class="large-6 columns large-centered">
+                  <ul class="pricing-table">
+                    <li class="price">operand1 = <?php echo "$ope1"; ?> 　  operand2 = <?php echo "$ope2"; ?></li>
+                    <li class="bullet-item">add : </li>
+                    <li class="bullet-item">sub : </li>
+                    <li class="bullet-item">mul : </li>
+                    <li class="bullet-item">div : </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+  <!-- 結果表示終了 -->
 </body>
 </html>
